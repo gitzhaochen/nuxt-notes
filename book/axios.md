@@ -24,7 +24,7 @@
     },
 ```
 
-在vue文件中，使用aysncData获取数据
+在vue文件中，使用aysncData获取数据填充data，区别fetch 方法用于在渲染页面前填充应用的状态树（store）数据， 与 asyncData 方法类似，不同的是它不会设置组件的数据。
 
 ```sh
     async asyncData ({app, params, error }) {
@@ -36,5 +36,9 @@
         }catch(err){
             error({ statusCode: 404, message: 'Page not found' });
         }
-    }
+    },
+    async fetch({app, store, params}) {
+        let {data} = await app.$axios.$get('/api')
+        store.commit('updateAppVersion', data)
+    },
 ```
