@@ -11,5 +11,6 @@
 
 ## 目录
 
-- [Axios获取数据](./book/axios.md)
-- [国际化](./book/i18n.md)
+- [Axios获取数据，使用nuxt封装好的模块](./book/axios.md)
+- [i18n国际化，根据域名跳转](./book/i18n.md)
+- [Element-ui，组合i18n使用](./book/element-ui.md)
