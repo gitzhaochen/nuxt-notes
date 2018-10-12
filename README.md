@@ -12,3 +12,4 @@
 ## 目录
 
 - [Axios获取数据](./book/axios.md)
+- [国际化](./book/i18n.md)
