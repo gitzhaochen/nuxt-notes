@@ -1,12 +1,10 @@
 ## element-ui
 element主题换色及国际化，配置如下
 
-nuxt.config.js配置全局样式，使用element命令行主题工具生成theme，
-[命令行主题工具相关地址](http://element-cn.eleme.io/#/zh-CN/component/custom-theme),
-（在项目中改变 SCSS 变量这种方法我试了没有成功，目前没有找到原因）
+nuxt.config.js配置全局样式，改变 SCSS 变量自定义主题颜色
 ```sh 
     css: [
-            '~/theme/index.css'
+            '~/common/element-ui.scss'
         ],
 
     router: {
@@ -21,7 +19,18 @@ nuxt.config.js配置全局样式，使用element命令行主题工具生成theme
    
     ],
 ```
-在plugins中的element-ui.js代码如下：
+在element-ui.scss中$--font-path变量使用相对路径:
+```sh
+    /* 改变主题色变量 */
+    $--color-primary: #ed5634;
+    
+    /* 改变 icon 字体路径变量，必需 */
+    $--font-path: './../../node_modules/element-ui/lib/theme-chalk/fonts';
+    
+    @import "~element-ui/packages/theme-chalk/src/index";
+
+```
+plugins中的element-ui.js代码如下：
 ```sh 
     import Vue from 'vue'
     import Element from 'element-ui'

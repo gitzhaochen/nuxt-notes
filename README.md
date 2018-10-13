@@ -11,6 +11,6 @@
 
 ## 目录
 
-- [asyncData获取数据，使用nuxt封装好的$axios模块](./book/axios.md)
+- [asyncData获取数据，使用$axios模块](./book/axios.md)
 - [i18n国际化，根据域名跳转](./book/i18n.md)
-- [Element-ui，组合i18n使用](./book/element-ui.md)
+- [Element-ui，组合i18n、自定义主题](./book/element-ui.md)
