@@ -66,8 +66,8 @@ package.json配置如下：
         },
     }
 ```
-3. 上传静态文件到阿里云oss,静态文件在nuxt-dist/dist/client目录下,详情查看[静态文件cdn,部署到阿里云oss](./book/cdn.md)
+3. 上传静态文件到阿里云oss,静态文件在nuxt-dist/dist/client目录下,详情查看[静态文件cdn,部署到阿里云oss](./cdn.md)
 4. 上传构建完成的文件到服务端,服务端运行只需要包括nuxt-dist/,server/,static/,config.js,ecosystem.config.js,nuxt.config.js,package.json,package-lock.json
 5. 上传完成后在服务端npm install,安装项目依赖 express等
 6. 运行npm start、服务开启
-7. 但是时间长了服务会挂掉极不稳定，使用pm2可以解决这个问题，查看详情[服务端部署，使用pm2进程守护](./book/pm2.md)
+7. 但是时间长了服务会挂掉极不稳定，使用pm2可以解决这个问题，查看详情[服务端部署，使用pm2进程守护](./pm2.md)
