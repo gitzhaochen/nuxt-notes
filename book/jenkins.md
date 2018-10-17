@@ -1,8 +1,17 @@
 ## jenkins构建生产环境
 > nuxt build这步操作cpu占用很高，在服务器直接build时候，把服务器搞挂了，坑～,换方案：在jenkins构建完成后，只上传build后的文件到服务器，在服务器只跑start任务
 
-方案如下：
-1. jenkins 拉代码 npm install（会自动更新packeage-lock.json，cnpm i 就不会）
+package.json配置如下：
+```sh 
+"scripts": {
+    "dev": "cross-env NODE_ENV=development HOST=0.0.0.0 PORT=3000 nodemon server/index.js --watch server",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "start": "cross-env NODE_ENV=production node server/index.js"
+},
+```
+方案步骤如下：
+1. jenkins 拉代码 npm install（会自动更新package-lock.json，cnpm i 就不会）
 2. npm run build 构建生产代码，在nuxt.config.js设置如下：
                        
 ```sh 
